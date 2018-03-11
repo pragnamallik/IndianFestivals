@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link rel="manifest" href="manifest.json">
+    <!-- un-comment this code to enable service worker
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('service-worker.js')
+          .then(() => console.log('service worker installed'))
+          .catch(err => console.log('Error', err));
+      }
+    </script>-->
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+  </head>
+  <body ng-app="myapp" ng-controller="mycontroller">
+    <ion-pane>
+      <ion-header-bar class="bar-stable">
+        <h1 class="title">Indian Festivals</h1>
+      </ion-header-bar>
+      <ion-content>
+        <p>
+          Diwali India
+        </p>
+        <a href="Diwali.html"><img src="/img/3Diwali.jpg"/><br></a><br><br>        
+        <p>Diwali is a festival of lights and is a gazetted holiday in India. Followers of Buddhism, Hinduism, Jainism and Sikhism observe various customs related to Diwali.</p>
+        <p>Diwali celebrations may last for up to five days. Many people decorate their home and workplaces with tiny electric lights or small clay oil lamps. Bowls of water with candles and flowers floating on the surface are also popular decorations</p>
+        <button type="button" ng-click="playAudio()">Play Diwali Music</button><br>
+        <iframe  width="425" height="100" src="https://www.youtube.com/embed/F9Bo89m2f6g" frameborder="0"></iframe><br>
+        <button type="button" ng-click="gotoHomePage()">Goto Welcome Screen</button>
+      </ion-content>
+    </ion-pane>
+  </body>
+</html>
