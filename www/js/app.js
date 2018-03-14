@@ -10,7 +10,7 @@ angular.module('myapp', ['ionic'])
   $scope.webdb = {};
   // open database
   var db  = openDatabase("IndianFestivals", "1", "Todo manager", dbSize);
-  
+
   //create table to use
   db.transaction(function (tx) 
   {
@@ -37,6 +37,7 @@ angular.module('myapp', ['ionic'])
         {
           for (var i = 0; i < rs.rows.length; i++) 
           {
+            document.cookie = "LoginName="+$scope.username;
             window.location="homepage.html";
             break;
           }
@@ -100,6 +101,8 @@ angular.module('myapp', ['ionic'])
   $scope.playAudio = function () 
   {
        var myMedia = null;
+       var time = 3000;
+       navigator.vibrate(time);
        //var src = "/android_asset/www/audio/piano.mp3";
        var src = "media/Diwali.mp3";
     
