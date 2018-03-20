@@ -1,1 +1,29 @@
 /* Empty. Add your own CSS if you like */
+
+ion-content{
+background-color: lightcyan;
+}
+
+#indexpara{
+    margin: 5%;
+}
+
+#loginpara{
+    text-align: center;
+}
+
+#btnLogin{
+    float: left;
+    margin-left: 8%;
+    background-color: cornsilk;
+    width: 15%;
+    font-weight: bold;
+}
+#btnRegister{
+    float: right;
+    margin-right: 8%;
+    background-color: cornsilk;
+    width: 15%;
+    font-weight: bold;
+}
+
