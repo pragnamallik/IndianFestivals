@@ -74,8 +74,10 @@
             <span id="reauth-email" class="reauth-email"></span>
             <input type="textbox" ng-model="username" id="inputEmail" class="form-control " placeholder="Username" required autofocus>
             <input type="password" ng-model="password " id="inputPassword" class="form-control " placeholder="Password " required>
-            <button class="btn btn-lg btn-primary btn-block btn-signin " type="submit ">Sign in</button>
-            <button class="btn btn-lg btn-primary btn-block btn-signin "  type="button " ng-click="gotoIndexPage() ">Goto Welcome Screen</button>
+            <button class="btn btn-lg btn-primary btn-block btn-signin " id="loginsignbutton" type="submit ">Sign in</button>
+          </form>
+          <form>
+            <button class="btn btn-lg btn-primary btn-block btn-signin "   id="loginwelcomebutton" ng-click="gotoIndexPage()">Goto Welcome Screen</button>
           </form>
         </div>
         <!-- /card-container -->
