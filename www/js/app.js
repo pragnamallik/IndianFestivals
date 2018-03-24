@@ -52,6 +52,11 @@ angular.module('myapp', ['ionic'])
     );
   }
 
+  $scope.playDiwali=function()
+  {
+    var audio = document.getElementById("diwali");
+    audio.play();
+  }
   $scope.register = function () 
   {
     db.transaction(function (tx) 

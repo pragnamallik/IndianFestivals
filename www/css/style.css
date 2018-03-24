@@ -1,7 +1,7 @@
 /* Empty. Add your own CSS if you like */
 
 ion-content{
-background-color: lightcyan;
+background-color: lightgreen;
 }
 
 #indexpara{
@@ -16,14 +16,14 @@ background-color: lightcyan;
     float: left;
     margin-left: 8%;
     background-color: cornsilk;
-    width: 15%;
+    width: 20%;
     font-weight: bold;
 }
 #btnRegister{
     float: right;
-    margin-right: 7%;
+    margin-right: 10%;
     background-color: cornsilk;
-    width: 15%;
+    width: 20%;
     font-weight: bold;
 }
 
@@ -31,4 +31,13 @@ background-color: lightcyan;
 {
     background-color: cornsilk;
     text-decoration-color: black;
+}
+
+.aligncenter{
+    text-align: center;
+    align-items: center;
+}
+
+aligncontentcenter{
+    text-align: justify;
 }

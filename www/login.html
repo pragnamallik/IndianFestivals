@@ -70,11 +70,11 @@
           <p id="profile-name" class="profile-name-card"></p>
           <form class="form-signin" ng-app="myapp" ng-controller="mycontroller" ng-submit="login()">
               <p id="loginpara" style="font-weight:bold;"> Please Login with your Username and Password</p>
-              <p id="loginpara" style="font-weight:bold;"> {{loginerror}}</label></p>
+              <p id="loginpara" style="font-weight:bold;color:red;"> {{loginerror}}</label></p>
             <span id="reauth-email" class="reauth-email"></span>
-            <input type="textbox" ng-model="username" id="inputEmail" class="form-control " placeholder="Username" required autofocus>
-            <input type="password" ng-model="password " id="inputPassword" class="form-control " placeholder="Password " required>
-            <button class="btn btn-lg btn-primary btn-block btn-signin " id="loginsignbutton" type="submit ">Sign in</button>
+            <input type="textbox" ng-model="username" id="inputEmail" class="form-control " placeholder="Username" required autofocus> <br>
+            <input type="password" ng-model="password " id="inputPassword" class="form-control " placeholder="Password " required><br>
+            <button class="btn btn-lg btn-primary btn-block btn-signin " id="loginsignbutton" type="submit ">Sign in</button><br>
           </form>
           <form>
             <button class="btn btn-lg btn-primary btn-block btn-signin "   id="loginwelcomebutton" ng-click="gotoIndexPage()">Goto Welcome Screen</button>

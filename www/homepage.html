@@ -38,21 +38,17 @@
 <body ng-app="myapp" ng-controller="mycontroller">
   <ion-pane>
     <ion-header-bar class="bar-stable">
-      <p style="font-weight:550;font-style:italic;color:blue;">
-        Logged in as
-          <script type="text/javascript"> 
-            document.write(getCookie("LoginName"));
-          </script>
-        </i>
-      </p>
       <p>
         <h1 class="title">Indian Festivals</h1>
       </p>
     </ion-header-bar>
     <ion-content>
-      <p style="text-align:right;">
-        <button id="logoutbutton" ng-click="gotoIndexPage()">Sign Out</button>
-      </p>
+      <p style="font-weight:550;font-style:italic;color:blue;text-align:right;">
+        Logged in as
+        <script type="text/javascript"> 
+          document.write(getCookie("LoginName"));
+        </script>
+        </p>
 
       <p style="text-align:center;font-size: 150%;color:coral;">
         <b>Diwali</b>
@@ -63,6 +59,10 @@
       <p style="text-align:center;color:brown;font-style:italic">Click on the picture</p>
       <br>
       <br>
+      <p style="text-align:center;">
+          <button id="logoutbutton" ng-click="gotoIndexPage()">Sign Out</button>
+        </p>
+
     </ion-content>
   </ion-pane>
 </body>
