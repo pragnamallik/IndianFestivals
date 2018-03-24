@@ -10,7 +10,7 @@
   <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" id="bootstrap-css">
   <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
   <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-  
+
   <!-- un-comment this code to enable service worker
     <script>
       if ('serviceWorker' in navigator) {
@@ -40,7 +40,7 @@
 <body ng-app="myapp" ng-controller="mycontroller">
   <ion-pane>
     <ion-header-bar class="bar-stable">
-      <h1 class="title">Indian Festivals</h1>
+      <h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Indian Festivals</h1>
     </ion-header-bar>
     <ion-content>
       <img src="img/1Welcome.png" width="100%" />
@@ -59,9 +59,11 @@
       <form class="form-horizontal" ng-app="myapp" ng-controller="mycontroller" ng-submit="register()">
         <fieldset>
           <div id="legend">
-            <p id="loginpara"><legend class="" style="font-weight: bold;">Register</legend></p>
+            <p id="loginpara">
+              <legend class="" style="font-weight: bold;">Register</legend>
+            </p>
           </div>
-          <label class="control-label"  style="font-weight: bold;color:red;">{{registererror}}</label>
+          <label class="control-label" style="font-weight: bold;color:red;">{{registererror}}</label>
           <div class="control-group">
             <!-- Username -->
             <label class="control-label" for="username">Username</label>
@@ -75,7 +77,7 @@
             <!-- Password-->
             <label class="control-label" for="password">Password</label>
             <div class="controls">
-              <input type="password"  required="required" ng-model="password" id="password" name="password" placeholder="" class="input-xlarge">
+              <input type="password" required="required" ng-model="password" id="password" name="password" placeholder="" class="input-xlarge">
               <p class="help-block">Password should be at least 4 characters</p>
             </div>
           </div>
@@ -84,7 +86,8 @@
             <!-- Password -->
             <label class="control-label" for="password_confirm">Password (Confirm)</label>
             <div class="controls">
-              <input type="password"  required="required" ng-model="confirmpassword" id="password_confirm" name="password_confirm" placeholder="" class="input-xlarge">
+              <input type="password" required="required" ng-model="confirmpassword" id="password_confirm" name="password_confirm" placeholder=""
+                class="input-xlarge">
               <p class="help-block">Please confirm password</p>
             </div>
           </div>
