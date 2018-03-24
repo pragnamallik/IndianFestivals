@@ -7,7 +7,6 @@
   <title></title>
 
   <link rel="manifest" href="manifest.json">
-
   <!-- un-comment this code to enable service worker
     <script>
       if ('serviceWorker' in navigator) {
@@ -32,7 +31,6 @@
 
   <!-- your app's js -->
   <script src="js/app.js"></script>
-  <script src="js/functions.js"></script>
 </head>
 
 <body ng-app="myapp" ng-controller="mycontroller" ng-init="playMusic()">
@@ -41,42 +39,32 @@
       <h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Indian Festivals</h1>
     </ion-header-bar>
     <ion-content>
-      <!--      <p style="font-weight:550;font-style:italic;color:blue;text-align:right;">
-        Logged in as
-        <script type="text/javascript"> 
-          document.write(getCookie("LoginName"));
-        </script>
+      <p>
+        <h1 class="aligncenter">Holi</h1>
       </p>
-    -->
-      <audio id="audio" src="media/Welcome.mp3"></audio>
-      <hr>
-      <p style="text-align:center;font-size: 150%;color:coral;">
-        <b>Diwali</b>
+      <p class="aligncenter">
+        <img src="img/4aHoli.png" width="50%" height="10%" />
       </p>
-      <a href="diwali.html">
-        <img src="img/3Diwali.png" width="100%" height="200px" />
       </a>
       <hr>
-      <br>
 
-      <p style="text-align:center;font-size: 150%;color:coral;">
-        <b>Holi</b>
+      <p class="aligncontentcenter">Holi is an ancient Hindu religious festival which has become popular with non-Hindus in many parts of South Asia, as
+        well as people of other communities outside Asia.In recent years the festival has spread to parts of Europe and North
+        America as a spring celebration of love, frolic, and colours.</p>
+      <p class="aligncontentcenter">Holi celebrations start on the night before Holi with a Holika Dahan where people gather, perform religious rituals
+        in front of the bonfire, and pray that their internal evil be destroyed the way Holika, the sister of the demon king
+        Hiranyakashipu, was killed in the fire.
       </p>
-      <a href="holi.html">
-        <img src="img/4Holi.png" width="100%" height="200px" />
-      </a>
+      <!--<button type="button" ng-click="playAudio()">Play Diwali Music</button><br>-->
+      <audio id="audio" src="media/Holi.mp3"></audio>
+      <hr>
+
+      <iframe width="100%" height="200" src="https://www.youtube.com/embed/QQ7jxoJrG2A" frameborder="0"></iframe>
       <hr>
       <br>
-
-      <p style="text-align:center;font-size: 150%;color:coral;">
-        <b>Navratri</b>
+      <p style="text-align:center;">
+        <button type="button" id="loginwelcomebutton" ng-click="gotoHomePage()">Back</button>
       </p>
-      <a href="navratri.html">
-        <img src="img/6Navratri.png" width="100%" height="200px" />
-      </a>
-      <hr>
-      <br>
-
       <p style="text-align:center;">
         <button id="logoutbutton" ng-click="gotoIndexPage()">Sign Out</button>
       </p>

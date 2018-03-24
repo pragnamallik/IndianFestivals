@@ -7,7 +7,6 @@
   <title></title>
 
   <link rel="manifest" href="manifest.json">
-
   <!-- un-comment this code to enable service worker
     <script>
       if ('serviceWorker' in navigator) {
@@ -32,7 +31,6 @@
 
   <!-- your app's js -->
   <script src="js/app.js"></script>
-  <script src="js/functions.js"></script>
 </head>
 
 <body ng-app="myapp" ng-controller="mycontroller" ng-init="playMusic()">
@@ -41,42 +39,32 @@
       <h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Indian Festivals</h1>
     </ion-header-bar>
     <ion-content>
-      <!--      <p style="font-weight:550;font-style:italic;color:blue;text-align:right;">
-        Logged in as
-        <script type="text/javascript"> 
-          document.write(getCookie("LoginName"));
-        </script>
+      <p>
+        <h1 class="aligncenter">Navratri</h1>
       </p>
-    -->
-      <audio id="audio" src="media/Welcome.mp3"></audio>
-      <hr>
-      <p style="text-align:center;font-size: 150%;color:coral;">
-        <b>Diwali</b>
+      <p class="aligncenter">
+        <img src="img/6aNavratri.png" width="50%" height="10%" />
       </p>
-      <a href="diwali.html">
-        <img src="img/3Diwali.png" width="100%" height="200px" />
       </a>
       <hr>
-      <br>
 
-      <p style="text-align:center;font-size: 150%;color:coral;">
-        <b>Holi</b>
+      <p class="aligncontentcenter">Navaratri (literally "nine nights"), also spelled Navratri or Navarathri, is a nine nights (and ten days) Hindu festival,
+        celebrated in the autumn every year. It is observed for different reasons and celebrated differently in various parts
+        of the Indian subcontinent.</p>
+      <p class="aligncontentcenter">In the eastern and northeastern states of India, the Durga Puja is synonymous with Navratri, wherein goddess Durga
+        battles and emerges victorious over the buffalo demon to help restore Dharma.
       </p>
-      <a href="holi.html">
-        <img src="img/4Holi.png" width="100%" height="200px" />
-      </a>
+      <!--<button type="button" ng-click="playAudio()">Play Diwali Music</button><br>-->
+      <audio id="audio" src="media/Navratri.mp3"></audio>
       <hr>
-      <br>
 
-      <p style="text-align:center;font-size: 150%;color:coral;">
-        <b>Navratri</b>
+      <iframe width="100%" height="200" src="https://www.youtube.com/embed/V8KNaLpNMCA" frameborder="0"></iframe>
+      <br>
+      <hr>
+
+      <p style="text-align:center;">
+        <button type="button" id="loginwelcomebutton" ng-click="gotoHomePage()">Back</button>
       </p>
-      <a href="navratri.html">
-        <img src="img/6Navratri.png" width="100%" height="200px" />
-      </a>
-      <hr>
-      <br>
-
       <p style="text-align:center;">
         <button id="logoutbutton" ng-click="gotoIndexPage()">Sign Out</button>
       </p>
