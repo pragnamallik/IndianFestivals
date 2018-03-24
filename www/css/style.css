@@ -3,9 +3,17 @@
 ion-content{
 background-color: lightgreen;
 }
+.title{
+    text-align: center;
+    font-weight: 500;
+}
 
 #indexpara{
     margin: 5%;
+}
+
+.aligncentercontents{
+    align-content: center
 }
 
 #loginpara{
