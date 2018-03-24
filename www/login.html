@@ -65,24 +65,19 @@
         <br>
         <button type="button" ng-click="gotoIndexPage()">Goto Welcome Screen</button>
       </form>-->
-      <div class="container">
-        <div >
-          <p id="profile-name" class="profile-name-card"></p>
-          <form class="form-signin" ng-app="myapp" ng-controller="mycontroller" ng-submit="login()">
-              <p id="loginpara" style="font-weight:bold;"> Please Login with your Username and Password</p>
-              <p id="loginpara" style="font-weight:bold;color:red;"> {{loginerror}}</label></p>
-            <span id="reauth-email" class="reauth-email"></span>
-            <input type="textbox" ng-model="username" id="inputEmail" class="form-control aligncentercontents" placeholder="Username" required autofocus> <br>
-            <input type="password" ng-model="password " id="inputPassword" class="form-control aligncentercontents" placeholder="Password " required><br>
-            <button class="btn btn-lg btn-primary btn-block btn-signin aligncentercontents" id="loginsignbutton" type="submit ">Sign in</button><br>
-          </form>
-          <form>
-            <button class="btn btn-lg btn-primary btn-block btn-signin aligncentercontents"   id="loginwelcomebutton" ng-click="gotoIndexPage()">Goto Welcome Screen</button>
-          </form>
-        </div>
-        <!-- /card-container -->
-      </div>
-      <!-- /container -->
+      <form ng-app="myapp" ng-controller="mycontroller" ng-submit="login()">
+        <p id="loginpara" style="font-weight:bold;"> Please Login with your Username and Password</p>
+        <p id="loginpara" style="font-weight:bold;color:red;"> {{loginerror}}</label>
+        </p>
+        <center><input type="textbox" ng-model="username" class="aligncenter" placeholder="Username" required autofocus></center>
+        <br>
+        <center><input type="password" ng-model="password" class="aligncenter" placeholder="Password " required></center>
+        <center><button class="aligncenter" id="loginsignbutton" type="submit ">Sign in</button></center>
+        <br>
+      </form>
+      <form>
+          <center><button class="aligncenter" id="loginwelcomebutton" ng-click="gotoIndexPage()"> Welcome Screen</button></center>
+      </form>
     </ion-content>
   </ion-pane>
 </body>

@@ -12,9 +12,6 @@ background-color: lightgreen;
     margin: 5%;
 }
 
-.aligncentercontents{
-    align-content: center
-}
 
 #loginpara{
     text-align: center;
@@ -44,8 +41,9 @@ background-color: lightgreen;
 .aligncenter{
     text-align: center;
     align-items: center;
+    align-content: center;
 }
 
-aligncontentcenter{
+.aligncontentcenter{
     text-align: justify;
 }
