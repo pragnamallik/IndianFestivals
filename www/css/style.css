@@ -32,7 +32,7 @@ background-color: lightgreen;
     font-weight: bold;
 }
 
-#registerregbutton,#registerbackbutton,#loginsignbutton,#loginwelcomebutton,#logoutbutton
+#registerregbutton,#registerbackbutton,#registerloginbutton,#loginsignbutton,#loginwelcomebutton,#logoutbutton
 {
     background-color: cornsilk;
     text-decoration-color: black;
@@ -46,4 +46,5 @@ background-color: lightgreen;
 
 .aligncontentcenter{
     text-align: justify;
+    margin: 3%;
 }

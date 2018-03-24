@@ -79,7 +79,10 @@ angular.module('myapp', ['ionic'])
     $scope.gotoIndexPage = function () {
       window.location = "index.html";
     }
-
+    $scope.gotoLoginPage = function () {
+      window.location = "login.html";
+    }
+    
     $scope.gotoHomePage = function () {
       window.location = "homepage.html";
     }
