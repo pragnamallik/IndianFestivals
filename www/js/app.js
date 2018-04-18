@@ -49,9 +49,19 @@ angular.module('myapp', ['ionic'])
     }
 
     $scope.notify = function () {
-      cordova.plugins.notification.local.schedule({
+      /*cordova.plugins.notification.local.schedule({
         text: "Wake up!",
         every: 1
+      });*/
+      var now = new Date().getTime(),
+        _5_sec_from_now = new Date(now + 5 * 1000);
+      alert(_5_sec_from_now);
+
+      window.plugin.notification.local.add({
+        id: 1,
+        title: 'Scheduled with delay',
+        message: 'Test Message 1',
+        date: _5_sec_from_now
       });
     }
 
