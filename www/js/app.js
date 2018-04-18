@@ -47,6 +47,21 @@ angular.module('myapp', ['ionic'])
       var audio = document.getElementById("audio");
       audio.play();
     }
+    $scope.scan = function () {
+      cordova.plugins.barcodeScanner.scan(
+        function (result) {
+          var s = "Result: " + result.text + "<br/>" +
+            "Format: " + result.format + "<br/>" +
+            "Cancelled: " + result.cancelled;
+          //resultDiv.innerHTML = s;
+          alert(s);
+        },
+        function (error) {
+          alert("Scanning failed: " + error);
+        }
+      );
+    }
+
     $scope.register = function () {
       db.transaction(function (tx) {
         if ($scope.password != $scope.confirmpassword) {
@@ -82,7 +97,7 @@ angular.module('myapp', ['ionic'])
     $scope.gotoLoginPage = function () {
       window.location = "login.html";
     }
-    
+
     $scope.gotoHomePage = function () {
       window.location = "homepage.html";
     }
