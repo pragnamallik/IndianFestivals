@@ -47,6 +47,14 @@ angular.module('myapp', ['ionic'])
       var audio = document.getElementById("audio");
       audio.play();
     }
+
+    $scope.notify = function () {
+      cordova.plugins.notification.local.schedule({
+        text: "Wake up!",
+        every: 1
+      });
+    }
+
     $scope.scan = function () {
       cordova.plugins.barcodeScanner.scan(
         function (result) {
