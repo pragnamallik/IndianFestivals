@@ -110,9 +110,9 @@ angular.module('myapp', ['ionic', 'firebase'])
     }
 
     $scope.checkConnection = function () {
-      alert("connection");
+      //alert("connection");
       network = navigator.network.connection.type;
-      alert("fdfd");
+      //alert("fdfd");
       var states = {};
       states[Connection.UNKNOWN] = 'Unknown connection';
       states[Connection.ETHERNET] = 'Ethernet connection';
@@ -151,7 +151,7 @@ angular.module('myapp', ['ionic', 'firebase'])
 
     //project and tasks start
     $scope.initializeFirebase = function () {
-      var ref = new Firebase("https://a-7ffb3.firebaseio.com/IndianFestivals/" + $scope.sKey + "/");
+      var ref = new Firebase("https://a-7ffb3.firebaseio.com/IndianFestivals/f09a27b45e15b6e1a040e45338f2e161/");
       $scope.projects = $firebaseObject(ref);
     }
     
