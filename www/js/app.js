@@ -121,7 +121,7 @@ angular.module('myapp', ['ionic', 'firebase'])
       states[Connection.CELL_3G] = 'Cell 3G connection';
       states[Connection.CELL_4G] = 'Cell 4G connection';
       states[Connection.NONE] = 'No network connection';
-      alert('Connection type: ' + states[networkState]);
+      alert('Connection type: ' + states[network]);
     }
 
     $scope.gotoHomePage = function () {
