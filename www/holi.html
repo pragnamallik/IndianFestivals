@@ -4,6 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <title></title>
 
   <link rel="manifest" href="manifest.json">
@@ -30,7 +31,12 @@
   <script src="cordova.js"></script>
 
   <!-- your app's js -->
+  <script src="js/uuid.js"></script>
   <script src="js/app.js"></script>
+  <!-- firebase angular code -->
+  <script src="https://cdn.firebase.com/js/client/2.2.1/firebase.js"></script>
+  <script src="https://cdn.firebase.com/libs/angularfire/1.0.0/angularfire.js"></script>
+
 </head>
 
 <body ng-app="myapp" ng-controller="mycontroller" ng-init="playMusic()">
@@ -68,6 +74,23 @@
       <p style="text-align:center;">
         <button id="logoutbutton" ng-click="gotoIndexPage()">Sign Out</button>
       </p>
+     
+      <!-- Project and tasks start-->
+      <div class="indent">
+        <div ng-repeat="task in projects['1f572fc5-8578-45fe-9286-b9d2283c20b8'].tasks">
+          <span>&nbsp;{{task.name}} &nbsp;{{task.length}} &nbsp;{{task.start}}
+          </span>
+        </div>
+        <form ng-submit="addTask(projects['1f572fc5-8578-45fe-9286-b9d2283c20b8'])">
+          <input ng-model="projects['1f572fc5-8578-45fe-9286-b9d2283c20b8'].task.name" placeholder="Name" />
+          <input ng-model="projects['1f572fc5-8578-45fe-9286-b9d2283c20b8'].task.length" placeholder="Email" />
+          <input ng-model="projects['1f572fc5-8578-45fe-9286-b9d2283c20b8'].task.start" placeholder="Comment" />
+          <button>
+            <i class="fa fa-plus-circle"></i>
+          </button>
+        </form>
+      </div>
+      <!-- Project and tasks end-->
 
     </ion-content>
   </ion-pane>

@@ -48,3 +48,8 @@ background-color: lightgreen;
     text-align: justify;
     margin: 3%;
 }
+
+.fa-plus-circle{
+    font-size: 1.4em;
+    color:green;
+}

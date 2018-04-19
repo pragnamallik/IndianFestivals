@@ -3,8 +3,9 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-angular.module('myapp', ['ionic'])
-  .controller('mycontroller', function ($scope, $http) {
+angular.module('myapp', ['ionic', 'firebase'])
+  .controller('mycontroller', function ($scope, $http, $firebaseObject) {
+
     var dbSize = 5 * 1024 * 1024; // 5MB
     $scope.webdb = {};
     // open database
@@ -43,6 +44,8 @@ angular.module('myapp', ['ionic'])
       );
     }
 
+
+
     $scope.playMusic = function () {
       var audio = document.getElementById("audio");
       audio.play();
@@ -52,7 +55,7 @@ angular.module('myapp', ['ionic'])
       cordova.plugins.notification.local.schedule({
         text: "Wake up!",
         every: 1
-      });      
+      });
     }
 
     $scope.scan = function () {
@@ -106,7 +109,23 @@ angular.module('myapp', ['ionic'])
       window.location = "login.html";
     }
 
+    $scope.checkConnection = function () {
+      alert("connection");
+      network = navigator.network.connection.type;
+      alert("fdfd");
+      var states = {};
+      states[Connection.UNKNOWN] = 'Unknown connection';
+      states[Connection.ETHERNET] = 'Ethernet connection';
+      states[Connection.WIFI] = 'WiFi connection';
+      states[Connection.CELL_2G] = 'Cell 2G connection';
+      states[Connection.CELL_3G] = 'Cell 3G connection';
+      states[Connection.CELL_4G] = 'Cell 4G connection';
+      states[Connection.NONE] = 'No network connection';
+      alert('Connection type: ' + states[networkState]);
+    }
+
     $scope.gotoHomePage = function () {
+      $scope.checkConnection();
       window.location = "homepage.html";
     }
 
@@ -129,6 +148,49 @@ angular.module('myapp', ['ionic'])
       }
       myMedia.play();
     }
+
+    //project and tasks start
+    $scope.initializeFirebase = function () {
+      var ref = new Firebase("https://a-7ffb3.firebaseio.com/IndianFestivals/" + $scope.sKey + "/");
+      $scope.projects = $firebaseObject(ref);
+    }
+
+    $scope.sKey = localStorage.getItem("sMD5");
+    if ($scope.sKey != null) {
+      $scope.initializeFirebase();
+    }
+
+    $scope.model = {};
+
+    $scope.initializeStorage = function () {
+      sMd5 = CryptoJS.MD5($scope.model.uname + $scope.model.password + "topSecret");
+      localStorage.setItem("sMD5", sMd5);
+      $scope.sKey = localStorage.getItem("sMD5");
+      $scope.initializeFirebase();
+    }
+
+    $scope.addProject = function () {
+      if ($scope.model.project) {
+        $scope.projects[uuid.v4()] = { name: $scope.model.project };
+        $scope.model.project = "";
+        $scope.projects.$save();
+        $scope.addProjectError = "";
+      }
+    }
+
+    $scope.addTask = function (project) {
+      if (!project.hasOwnProperty("tasks")) {
+        project.tasks = {};
+      }
+      if (project.task && project.task.length && project.task.start) {
+        project.tasks[uuid.v4()] = { name: project.task.name, length: project.task.length, start: project.task.start };
+        delete project.task;
+        $scope.projects.$save();
+        $scope.addProjectError = "";
+      }
+    }
+    //project and tasks end
+
 
   })
   .run(function ($ionicPlatform) {
