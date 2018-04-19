@@ -154,14 +154,17 @@ angular.module('myapp', ['ionic', 'firebase'])
       var ref = new Firebase("https://a-7ffb3.firebaseio.com/IndianFestivals/" + $scope.sKey + "/");
       $scope.projects = $firebaseObject(ref);
     }
-
-    $scope.sKey = localStorage.getItem("sMD5");
+    
+    
+    $scope.sKey = "123";
     if ($scope.sKey != null) {
       $scope.initializeFirebase();
     }
-
+    
     $scope.model = {};
 
+
+    /*
     $scope.initializeStorage = function () {
       sMd5 = CryptoJS.MD5($scope.model.uname + $scope.model.password + "topSecret");
       localStorage.setItem("sMD5", sMd5);
@@ -177,6 +180,7 @@ angular.module('myapp', ['ionic', 'firebase'])
         $scope.addProjectError = "";
       }
     }
+    */
 
     $scope.addTask = function (project) {
       if (!project.hasOwnProperty("tasks")) {
