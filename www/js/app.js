@@ -54,28 +54,28 @@ angular.module('myapp', ['ionic', 'firebase'])
         cordova.plugins.notification.local.schedule({
           id: Math.floor(Math.random() * (1000000000 - 1) + 1),
           title: 'IndianFestivals',
-          text: name + " commented on Diwali",
+          text: name + " commented on Diwali"
         });
       }
       else if (item == "Holi") {
         cordova.plugins.notification.local.schedule({
           id: Math.floor(Math.random() * (1000000000 - 1) + 1),
           title: 'IndianFestivals',
-          text: name + " commented on Holi",
+          text: name + " commented on Holi"
         });
       }
       else if (item == "Navratri") {
         cordova.plugins.notification.local.schedule({
           id: Math.floor(Math.random() * (1000000000 - 1) + 1),
           title: 'IndianFestivals',
-          text: name + " commented on Navratri",
+          text: name + " commented on Navratri"
         });
       }
       else if (item == "Review") {
         cordova.plugins.notification.local.schedule({
           id: Math.floor(Math.random() * (1000000000 - 1) + 1),
           title: 'IndianFestivals',
-          text: name + " reviewd the app",
+          text: name + " reviewed the app"
         });
       }
     }
