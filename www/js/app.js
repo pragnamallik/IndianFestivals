@@ -44,8 +44,6 @@ angular.module('myapp', ['ionic', 'firebase'])
       );
     }
 
-
-
     $scope.playMusic = function () {
       var audio = document.getElementById("audio");
       audio.play();
@@ -61,14 +59,28 @@ angular.module('myapp', ['ionic', 'firebase'])
     $scope.scan = function () {
       cordova.plugins.barcodeScanner.scan(
         function (result) {
-          var s = "Result: " + result.text + "<br/>" +
-            "Format: " + result.format + "<br/>" +
-            "Cancelled: " + result.cancelled;
+          var s = "BarCode: " + result.text + "<br/>" +
+            "Format: " + result.format + "<br/>";
+          //"Cancelled: " + result.cancelled;
           //resultDiv.innerHTML = s;
+          document.getElementById("scanresults").innerHTML = s;
           alert(s);
         },
         function (error) {
-          alert("Scanning failed: " + error);
+          document.getElementById("scanresults").innerHTML = "INVALID CODE";
+        },
+        {
+          preferFrontCamera: true, // iOS and Android
+          showFlipCameraButton: true, // iOS and Android
+          showTorchButton: true, // iOS and Android
+          torchOn: true, // Android, launch with the torch switched on (if available)
+          saveHistory: true, // Android, save scan history (default false)
+          prompt: "Place a barcode inside the scan area", // Android
+          resultDisplayDuration: 500, // Android, display scanned text for X ms. 0 suppresses it entirely, default 1500
+          formats: "QR_CODE,PDF_417", // default: all but PDF_417 and RSS_EXPANDED
+          orientation: "landscape", // Android only (portrait|landscape), default unset so it rotates with the device
+          disableAnimations: true, // iOS
+          disableSuccessBeep: false // iOS and Android
         }
       );
     }
@@ -125,7 +137,7 @@ angular.module('myapp', ['ionic', 'firebase'])
     }
 
     $scope.gotoHomePage = function () {
-      $scope.checkConnection();
+      //$scope.checkConnection();
       window.location = "homepage.html";
     }
 
@@ -154,13 +166,13 @@ angular.module('myapp', ['ionic', 'firebase'])
       var ref = new Firebase("https://a-7ffb3.firebaseio.com/IndianFestivals/f09a27b45e15b6e1a040e45338f2e161/");
       $scope.projects = $firebaseObject(ref);
     }
-    
-    
+
+
     $scope.sKey = "123";
     if ($scope.sKey != null) {
       $scope.initializeFirebase();
     }
-    
+
     $scope.model = {};
 
 

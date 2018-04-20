@@ -36,7 +36,6 @@
   <!-- firebase angular code -->
   <script src="https://cdn.firebase.com/js/client/2.2.1/firebase.js"></script>
   <script src="https://cdn.firebase.com/libs/angularfire/1.0.0/angularfire.js"></script>
-
 </head>
 
 <body ng-app="myapp" ng-controller="mycontroller" ng-init="playMusic()">
@@ -46,26 +45,18 @@
     </ion-header-bar>
     <ion-content>
       <p>
-        <h1 class="aligncenter">Feedback</h1>
+        <h1 class="alignleft">Scan BarCode on Gift</h1>
       </p>
       <hr>
 
-      <!-- Project and tasks start-->
-      <div class="indent">
-        <div ng-repeat="task in projects['3f572fc5-8578-45fe-9286-b9d2283c20b8'].tasks">
-          <span>&nbsp;{{task.name}} &nbsp;{{task.length}} &nbsp;{{task.start}}
-          </span>
-        </div>
-        <form ng-submit="addTask(projects['3f572fc5-8578-45fe-9286-b9d2283c20b8'])">
-          <input ng-model="projects['3f572fc5-8578-45fe-9286-b9d2283c20b8'].task.name" placeholder="Name" />
-          <input ng-model="projects['3f572fc5-8578-45fe-9286-b9d2283c20b8'].task.length" placeholder="Email" />
-          <input ng-model="projects['3f572fc5-8578-45fe-9286-b9d2283c20b8'].task.start" placeholder="Feedback" />
-          <button>
-            <i class="fa fa-plus-circle"></i>
-          </button>
-        </form>
-      </div>
-      <!-- Project and tasks end-->
+
+      <p style="text-align:center;">
+        <button type="button" id="loginwelcomebutton" ng-click="scan()">Scan</button>
+      </p>
+      <p class="aligncontentcenter" id="scanresults">
+
+      </p>
+      <hr>
 
       <p style="text-align:center;">
         <button type="button" id="loginwelcomebutton" ng-click="gotoHomePage()">Back</button>
@@ -73,7 +64,6 @@
       <p style="text-align:center;">
         <button id="logoutbutton" ng-click="gotoIndexPage()">Sign Out</button>
       </p>
-
 
     </ion-content>
   </ion-pane>

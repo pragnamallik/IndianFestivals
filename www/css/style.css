@@ -32,7 +32,8 @@ background-color: lightgreen;
     font-weight: bold;
 }
 
-#registerregbutton,#registerbackbutton,#registerloginbutton,#loginsignbutton,#loginwelcomebutton,#logoutbutton
+#registerregbutton,#registerbackbutton,#registerloginbutton,#loginsignbutton,#loginwelcomebutton,#logoutbutton,
+#postbutton
 {
     background-color: cornsilk;
     text-decoration-color: black;
@@ -52,4 +53,126 @@ background-color: lightgreen;
 .fa-plus-circle{
     font-size: 1.4em;
     color:green;
+}
+
+#respond {
+    margin-top: 30px;
+  }
+  
+  #respond input[type='text'],
+  #respond input[type='email'], 
+  #respond textarea {
+    margin-bottom: 5px;
+    margin-left: 5%;
+    margin-right: 5%;
+    display: block;
+    width: 90%;
+    align-content: center;
+    align-items: center;
+    align-self: center;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -o-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -khtml-border-radius: 5px;
+    border-radius: 5px;  
+    line-height: 1.4em;
+  }
+
+  .postsection{
+      margin-left: 3%;
+      margin-right: 3%;
+      background-color: aliceblue;
+  }
+
+  .commentheader{
+      margin-left: 2%;
+  }
+
+  .commentcontent{
+    margin-left: 2%;
+    margin-right: 2%;      
+  }
+
+  .commenttext{
+      font-style: italic;
+  }
+
+  .homepageimages{
+      margin: 4%;
+  }
+
+  .mapsgoogle{
+    margin-left:4%;
+    margin-right:2%;
+    margin-top:5%;
+    text-align: center;
+    font-size: 150%;
+    font-weight: bold;
+    font-style: initial;
+    color: maroon;
+}
+
+#canvasdiwali {
+    background: #000;
+	cursor: crosshair;
+    display: block;
+    width: 90%;    
+    height: 200px;
+    margin-left: 4%;
+}
+
+#canvasnavratri {
+    background: #000;
+	cursor: crosshair;
+    display: block;
+    width: 90%;    
+    height: 200px;
+    margin-left: 4%;
+}
+
+#canvasholi {
+    background: #000;
+	cursor: crosshair;
+    display: block;
+    width: 90%;    
+    height: 200px;
+    margin-left: 4%;
+
+    font-size: 20pt;
+    font-family: Cursive;
+    font-weight: bolder;
+    -webkit-animation: shadowchange 2s infinite, changetxtcolor 3s infinite;
+    -webkit-animation: changebgcolor 10s infinite;
+}
+
+@-webkit-keyframes shadowchange{
+    0%,100% {text-shadow: 2pt 2pt 2pt red,2pt -2pt 2pt green,-2pt 2pt 2pt blue,-2pt -2pt 2pt yellow;}
+    25% {text-shadow: 2pt 2pt 2pt green,2pt -2pt 2pt magenta,-2pt 2pt 2pt gold,-2pt -2pt 2pt purple;}
+    50% {text-shadow: 2pt 2pt 2pt orange,2pt -2pt 2pt red,-2pt 2pt 2pt magenta,-2pt -2pt 2pt blue;}
+    75% {text-shadow: 2pt 2pt 2pt blue,2pt -2pt 2pt purple,-2pt 2pt 2pt cyan,-2pt -2pt 2pt magenta;}
+}
+
+@-webkit-keyframes changebgcolor{
+    0%,100% {background-color: green;}
+    20% {background-color: orange;}
+    40% {background-color: red;}
+    60% {background-color: cyan;}
+    80% {background-color: yellow;}
+}
+
+@-webkit-keyframes changetxtcolor{
+    0%,100% {color: orange;}
+    20% {color: gold;}
+    40% {color: magenta;}
+    60% {color: red;}
+    80% {color: lightgreen;}
+}
+
+.alignleft{
+    text-align: left;
+    align-items: left;
+    align-content: left;
+    margin:5%;
 }
