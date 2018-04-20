@@ -48,36 +48,12 @@ angular.module('myapp', ['ionic', 'firebase'])
       var audio = document.getElementById("audio");
       audio.play();
     }
-    $scope.notify = function (name, email, comment, item) {
-      // $scope.notify(project.task, project.task.length, project.task.start, "Review");
-      if (item == "Diwali") {
-        cordova.plugins.notification.local.schedule({
-          id: Math.floor(Math.random() * (1000000000 - 1) + 1),
-          title: 'IndianFestivals',
-          text: name + " commented on Diwali"
-        });
-      }
-      else if (item == "Holi") {
-        cordova.plugins.notification.local.schedule({
-          id: Math.floor(Math.random() * (1000000000 - 1) + 1),
-          title: 'IndianFestivals',
-          text: name + " commented on Holi"
-        });
-      }
-      else if (item == "Navratri") {
-        cordova.plugins.notification.local.schedule({
-          id: Math.floor(Math.random() * (1000000000 - 1) + 1),
-          title: 'IndianFestivals',
-          text: name + " commented on Navratri"
-        });
-      }
-      else if (item == "Review") {
-        cordova.plugins.notification.local.schedule({
-          id: Math.floor(Math.random() * (1000000000 - 1) + 1),
-          title: 'IndianFestivals',
-          text: name + " reviewed the app"
-        });
-      }
+
+    $scope.notify = function () {
+      cordova.plugins.notification.local.schedule({
+        text: "People commented on Indian Fests",
+        every: 1
+      });
     }
 
     $scope.scan = function () {
@@ -229,19 +205,7 @@ angular.module('myapp', ['ionic', 'firebase'])
         $scope.projects.$save();
         $scope.addProjectError = "";
       }
-      if (project == "0f572fc5-8578-45fe-9286-b9d2283c20b8") {
-        $scope.notify(project.task, project.task.length, project.task.start, "Diwali");
-      }
-      else if (project == "1f572fc5-8578-45fe-9286-b9d2283c20b8") {
-        $scope.notify(project.task, project.task.length, project.task.start, "Holi");
-      }
-      else if (project == "2f572fc5-8578-45fe-9286-b9d2283c20b8") {
-        $scope.notify(project.task, project.task.length, project.task.start, "Navratri");
-      }
-      else if (project == "3f572fc5-8578-45fe-9286-b9d2283c20b8") {
-        $scope.notify(project.task, project.task.length, project.task.start, "Review");
-      }
-
+      $scope.notify();
     }
     //project and tasks end
 
