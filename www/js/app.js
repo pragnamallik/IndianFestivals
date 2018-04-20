@@ -48,12 +48,37 @@ angular.module('myapp', ['ionic', 'firebase'])
       var audio = document.getElementById("audio");
       audio.play();
     }
-
-    $scope.notify = function () {
-      cordova.plugins.notification.local.schedule({
-        text: "Wake up!",
-        every: 1
-      });
+    $scope.notify = function (name, email, comment, item) {
+      $scope.notify(project.task, project.task.length, project.task.start, "Review");
+      if (item == "Diwali") {
+        cordova.plugins.notification.local.schedule({
+          id: Math.floor(Math.random() * (1000000000 - 1) + 1),
+          title: 'IndianFestivals',
+          text: project.task + " commented on Diwali",
+          sound: (this.platform.is('android') && this.settingsProvider.settings.sound == true) ? 'file://assets/sounds/android.mp3' : 'file://assets/sounds/android.mp3',
+          badge: 1,
+          icon: '../img/ionic.png',
+          smallIcon: '../img/ionic.png',
+        });
+      }
+      else if (item == "Holi") {
+        cordova.plugins.notification.local.schedule({
+          text: project.task + " commented on Holi",
+          every: 1
+        });
+      }
+      else if (item == "Navratri") {
+        cordova.plugins.notification.local.schedule({
+          text: project.task + " commented on Navratri",
+          every: 1
+        });
+      }
+      else if (item == "Review") {
+        cordova.plugins.notification.local.schedule({
+          text: project.task + " reviewed the app",
+          every: 1
+        });
+      }
     }
 
     $scope.scan = function () {
@@ -131,8 +156,10 @@ angular.module('myapp', ['ionic', 'firebase'])
       states[Connection.CELL_3G] = 'Cell 3G connection';
       states[Connection.CELL_4G] = 'Cell 4G connection';
       states[Connection.NONE] = 'No network connection';
+      if (states[network] == states[Connection.NONE]) {
+        document.getElementById("diwaliyoutube").innerHTML = "To view this video, you need to have active Internet";
+      }
       alert(states[network]);
-      $scope.playMusic();
     }
 
     $scope.gotoHomePage = function () {
@@ -203,6 +230,19 @@ angular.module('myapp', ['ionic', 'firebase'])
         $scope.projects.$save();
         $scope.addProjectError = "";
       }
+      if (project == "0f572fc5-8578-45fe-9286-b9d2283c20b8") {
+        $scope.notify(project.task, project.task.length, project.task.start, "Diwali");
+      }
+      else if (project == "1f572fc5-8578-45fe-9286-b9d2283c20b8") {
+        $scope.notify(project.task, project.task.length, project.task.start, "Holi");
+      }
+      else if (project == "2f572fc5-8578-45fe-9286-b9d2283c20b8") {
+        $scope.notify(project.task, project.task.length, project.task.start, "Navratri");
+      }
+      else if (project == "3f572fc5-8578-45fe-9286-b9d2283c20b8") {
+        $scope.notify(project.task, project.task.length, project.task.start, "Review");
+      }
+
     }
     //project and tasks end
 
