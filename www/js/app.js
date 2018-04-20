@@ -135,7 +135,6 @@ angular.module('myapp', ['ionic', 'firebase'])
         document.getElementById("diwaliyoutube").innerHTML = "To view this video, you need to have active Internet";
       }
       alert(states[network]);
-
     }
 
     $scope.gotoHomePage = function () {
