@@ -64,7 +64,7 @@ angular.module('myapp', ['ionic', 'firebase'])
           //"Cancelled: " + result.cancelled;
           //resultDiv.innerHTML = s;
           document.getElementById("scanresults").innerHTML = s;
-          alert(s);
+          //alert(s);
         },
         function (error) {
           document.getElementById("scanresults").innerHTML = "INVALID CODE";
