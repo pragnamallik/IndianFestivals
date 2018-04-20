@@ -133,9 +133,12 @@ angular.module('myapp', ['ionic', 'firebase'])
       states[Connection.CELL_3G] = 'Cell 3G connection';
       states[Connection.CELL_4G] = 'Cell 4G connection';
       states[Connection.NONE] = 'No network connection';
-      alert('Connection type: ' + states[network]);
+      if(states[network]==states[Connection.NONE])
+      {
+        document.getElementById("diwaliyoutube").innerHTML = "To view this video, you need to have active Internet";
+      }
     }
-
+    
     $scope.gotoHomePage = function () {
       //$scope.checkConnection();
       window.location = "homepage.html";

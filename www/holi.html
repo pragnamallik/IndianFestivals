@@ -67,9 +67,9 @@
     function splash(event) {
       if (c != null)
         clearInterval(c)
-      x = event.x
-      y = event.y
-      rmax = 50 + Math.floor(Math.random() * 50)
+      x = event.x - cnv.offsetLeft
+      y = event.y - cnv.offsetTop
+      rmax = 50 + Math.floor(Math.random() * 10)
       a = Math.floor(Math.random() * 10)
       c = setInterval(splash1, 50)
     }
