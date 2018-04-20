@@ -37,30 +37,30 @@
   <script src="https://cdn.firebase.com/js/client/2.2.1/firebase.js"></script>
   <script src="https://cdn.firebase.com/libs/angularfire/1.0.0/angularfire.js"></script>
 
+  <script>
+      var counter = 1;
+      setInterval(function(){
+      var myCanvas = document.getElementById('canvasnavratri');
+      var ctx = myCanvas.getContext('2d');
+      var img = new Image;
+      img.onload = function(){
+      ctx.drawImage(img,0,0);
+      };
+  
+      // I had 4 images in my folder so I checked with 4.
+      if(counter == 4) counter = 1;
+      
+      // assuming that your image sequence is named 1.jpg, 2.jpg, 3.jpg ....
+      img.src = "img/navratri/"+counter + '.png';
+  
+      counter++;
+      
+      // I set the interval to 100 ms, increase or decrease as per your need.
+      // If you don't want loop use clearTimeout()
+      }, 2000);
+  </script>
+
   <script type="text/javascript">
-    window.onload = function () {
-      var
-        img = new Image,
-        ctx = document.getElementById('canvasnavratri').getContext('2d');
-
-      img.src = "img/6bnavratri.png";
-      img.onload = function () {
-
-        var interval = setInterval(function () {
-          var x = 0, y = 0;
-
-          return function () {
-            ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
-            ctx.drawImage(img, x, y + 15);
-
-            x += 1;
-            if (x > ctx.canvas.width) {
-              x = 0;
-            }
-          };
-        }(), 1000 / 40);
-      }
-    }
     /*
     window.addEventListener('load', function () {
       var

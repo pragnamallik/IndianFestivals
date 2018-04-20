@@ -131,6 +131,8 @@ background-color: lightgreen;
     width: 90%;    
     height: 200px;
     margin-left: 4%;
+    padding-left: 20%;
+    padding-top: 5%;
 }
 
 #canvasholi {
@@ -144,18 +146,18 @@ background-color: lightgreen;
     font-size: 20pt;
     font-family: Cursive;
     font-weight: bolder;
-    -webkit-animation: shadowchange 2s infinite, changetxtcolor 3s infinite;
-    -webkit-animation: changebgcolor 10s infinite;
+    animation: shadowchange 2s infinite, changetxtcolor 3s infinite;
+    animation: changebgcolor 10s infinite;
 }
 
-@-webkit-keyframes shadowchange{
+@keyframes shadowchange{
     0%,100% {text-shadow: 2pt 2pt 2pt red,2pt -2pt 2pt green,-2pt 2pt 2pt blue,-2pt -2pt 2pt yellow;}
     25% {text-shadow: 2pt 2pt 2pt green,2pt -2pt 2pt magenta,-2pt 2pt 2pt gold,-2pt -2pt 2pt purple;}
     50% {text-shadow: 2pt 2pt 2pt orange,2pt -2pt 2pt red,-2pt 2pt 2pt magenta,-2pt -2pt 2pt blue;}
     75% {text-shadow: 2pt 2pt 2pt blue,2pt -2pt 2pt purple,-2pt 2pt 2pt cyan,-2pt -2pt 2pt magenta;}
 }
 
-@-webkit-keyframes changebgcolor{
+@keyframes changebgcolor{
     0%,100% {background-color: green;}
     20% {background-color: orange;}
     40% {background-color: red;}
@@ -163,7 +165,7 @@ background-color: lightgreen;
     80% {background-color: yellow;}
 }
 
-@-webkit-keyframes changetxtcolor{
+@keyframes changetxtcolor{
     0%,100% {color: orange;}
     20% {color: gold;}
     40% {color: magenta;}
