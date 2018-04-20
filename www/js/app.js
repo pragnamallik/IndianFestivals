@@ -49,34 +49,33 @@ angular.module('myapp', ['ionic', 'firebase'])
       audio.play();
     }
     $scope.notify = function (name, email, comment, item) {
-      $scope.notify(project.task, project.task.length, project.task.start, "Review");
+      // $scope.notify(project.task, project.task.length, project.task.start, "Review");
       if (item == "Diwali") {
         cordova.plugins.notification.local.schedule({
           id: Math.floor(Math.random() * (1000000000 - 1) + 1),
           title: 'IndianFestivals',
-          text: project.task + " commented on Diwali",
-          sound: (this.platform.is('android') && this.settingsProvider.settings.sound == true) ? 'file://assets/sounds/android.mp3' : 'file://assets/sounds/android.mp3',
-          badge: 1,
-          icon: '../img/ionic.png',
-          smallIcon: '../img/ionic.png',
+          text: name + " commented on Diwali",
         });
       }
       else if (item == "Holi") {
         cordova.plugins.notification.local.schedule({
-          text: project.task + " commented on Holi",
-          every: 1
+          id: Math.floor(Math.random() * (1000000000 - 1) + 1),
+          title: 'IndianFestivals',
+          text: name + " commented on Holi",
         });
       }
       else if (item == "Navratri") {
         cordova.plugins.notification.local.schedule({
-          text: project.task + " commented on Navratri",
-          every: 1
+          id: Math.floor(Math.random() * (1000000000 - 1) + 1),
+          title: 'IndianFestivals',
+          text: name + " commented on Navratri",
         });
       }
       else if (item == "Review") {
         cordova.plugins.notification.local.schedule({
-          text: project.task + " reviewed the app",
-          every: 1
+          id: Math.floor(Math.random() * (1000000000 - 1) + 1),
+          title: 'IndianFestivals',
+          text: name + " reviewd the app",
         });
       }
     }
