@@ -51,39 +51,41 @@
       <hr>
 
       <!-- Project and tasks start-->
-      <div id="respond">
-        <h3 style="margin-left: 3%;color:crimson">REVIEW OUR APP</h3>
-        <form ng-submit="addTask(projects['3f572fc5-8578-45fe-9286-b9d2283c20b8'])">
-          <textarea rows="6" ng-model="projects['3f572fc5-8578-45fe-9286-b9d2283c20b8'].task.start" placeholder="Comment" required="required"></textarea>
-          <input ng-model="projects['3f572fc5-8578-45fe-9286-b9d2283c20b8'].task.name" type="text" placeholder="Name" required="required"
-          />
-          <input ng-model="projects['3f572fc5-8578-45fe-9286-b9d2283c20b8'].task.length" type="Email" placeholder="Email" required="required"
-          />
-          <p style="text-align:right;margin-right: 5%;">
-            <button id="postbutton" style="text-align:center;">
-              POST
-            </button>
-          </p>
-        </form>
-      </div>
-      <br>
-      <p style="text-align:center;">
-        <button type="button" id="loginwelcomebutton" ng-click="gotoHomePage()">Back</button>
-      </p>
-      <p style="text-align:center;">
-        <button id="logoutbutton" ng-click="gotoIndexPage()">Sign Out</button>
-      </p>
-      <br>
-      <div class="indent">
-        <h3 class="commentheader">Reviews:</h3>
-        <div ng-repeat="task in projects['3f572fc5-8578-45fe-9286-b9d2283c20b8'].tasks" class="commentcontent">
-          <hr>
-          <div class="media-body postsection">
-            <h4 class="media-heading">{{task.name}}&nbsp;({{task.length}})</h4>
-            <span class="commenttext">&nbsp; &nbsp;{{task.start}}</span>
+      <p id="comments">
+        <div id="respond">
+          <h3 style="margin-left: 3%;color:crimson">REVIEW OUR APP</h3>
+          <form ng-submit="addTask(projects['3f572fc5-8578-45fe-9286-b9d2283c20b8'])">
+            <textarea rows="6" ng-model="projects['3f572fc5-8578-45fe-9286-b9d2283c20b8'].task.start" placeholder="Comment" required="required"></textarea>
+            <input ng-model="projects['3f572fc5-8578-45fe-9286-b9d2283c20b8'].task.name" type="text" placeholder="Name" required="required"
+            />
+            <input ng-model="projects['3f572fc5-8578-45fe-9286-b9d2283c20b8'].task.length" type="Email" placeholder="Email" required="required"
+            />
+            <p style="text-align:right;margin-right: 5%;">
+              <button id="postbutton" style="text-align:center;">
+                POST
+              </button>
+            </p>
+          </form>
+        </div>
+        <br>
+        <p style="text-align:center;">
+          <button type="button" id="loginwelcomebutton" ng-click="gotoHomePage()">Back</button>
+        </p>
+        <p style="text-align:center;">
+          <button id="logoutbutton" ng-click="gotoIndexPage()">Sign Out</button>
+        </p>
+        <br>
+        <div class="indent">
+          <h3 class="commentheader">Reviews:</h3>
+          <div ng-repeat="task in projects['3f572fc5-8578-45fe-9286-b9d2283c20b8'].tasks" class="commentcontent">
+            <hr>
+            <div class="media-body postsection">
+              <h4 class="media-heading">{{task.name}}&nbsp;({{task.length}})</h4>
+              <span class="commenttext">&nbsp; &nbsp;{{task.start}}</span>
+            </div>
           </div>
         </div>
-      </div>
+      </p>
       <!-- Project and tasks end-->
 
     </ion-content>

@@ -5,6 +5,12 @@
 // the 2nd parameter is an array of 'requires'
 angular.module('myapp', ['ionic', 'firebase'])
   .controller('mycontroller', function ($scope, $http, $firebaseObject) {
+    
+    //$http.get('http://rest-service.guides.spring.io/greeting').
+    $http.get('https://whispering-woodland-9020.herokuapp.com/getAllBooks').    
+    then(function(response) {
+        $scope.data = response.data;
+    });
 
     var dbSize = 5 * 1024 * 1024; // 5MB
     $scope.webdb = {};
@@ -138,6 +144,7 @@ angular.module('myapp', ['ionic', 'firebase'])
         document.getElementById("youtube").innerHTML = "To view youtube video, you need to have an active Internet Connection";
         document.getElementById("maps").innerHTML = "To view the map, you need to have an active Internet Connection";
         document.getElementById("comments").innerHTML = "To post and read comments, you need to have an active Internet Connection";
+        document.getElementById("capstone").innerHTML = "To see our capstone books, you need to have an active Internet Connection";
       }
       //alert(states[network]);
     }
