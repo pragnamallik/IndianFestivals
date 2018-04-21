@@ -56,7 +56,7 @@ angular.module('myapp', ['ionic', 'firebase'])
 
     $scope.notify = function () {
       cordova.plugins.notification.local.schedule({
-        text: "People commented on Indian Fests",
+        text: "People commented on Indian Festivals",
         every: 1
       });
     }
@@ -129,7 +129,8 @@ angular.module('myapp', ['ionic', 'firebase'])
     setInterval(function () {
       $scope.checkConnection();
     }, 1000)
-
+ 
+ 
     $scope.checkConnection = function () {
       network = navigator.network.connection.type;
       var states = {};
@@ -144,6 +145,7 @@ angular.module('myapp', ['ionic', 'firebase'])
         document.getElementById("youtube").innerHTML = "To view youtube video, you need to have an active Internet Connection";
         document.getElementById("maps").innerHTML = "To view the map, you need to have an active Internet Connection";
         document.getElementById("comments").innerHTML = "To post and read comments, you need to have an active Internet Connection";
+        document.getElementById("reviews").innerHTML = "";
         document.getElementById("capstones").innerHTML = "To see our capstone books, you need to have an active Internet Connection";
       }
       //alert(states[network]);

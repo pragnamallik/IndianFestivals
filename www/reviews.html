@@ -67,14 +67,20 @@
             </p>
           </form>
         </div>
-        <br>
-        <p style="text-align:center;">
-          <button type="button" id="loginwelcomebutton" ng-click="gotoHomePage()">Back</button>
-        </p>
-        <p style="text-align:center;">
-          <button id="logoutbutton" ng-click="gotoIndexPage()">Sign Out</button>
-        </p>
-        <br>
+      </div>
+      <br>
+      <hr>
+      
+      <p style="text-align:center;">
+        <button type="button" id="loginwelcomebutton" ng-click="gotoHomePage()">Back</button>
+      </p>
+      <p style="text-align:center;">
+        <button id="logoutbutton" ng-click="gotoIndexPage()">Sign Out</button>
+      </p>
+      <hr>
+      <br>
+
+      <div id="reviews">
         <div class="indent">
           <h3 class="commentheader">Reviews:</h3>
           <div ng-repeat="task in projects['3f572fc5-8578-45fe-9286-b9d2283c20b8'].tasks" class="commentcontent">
