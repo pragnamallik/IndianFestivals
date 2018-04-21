@@ -43,16 +43,15 @@ angular.module('myapp', ['ionic', 'firebase'])
       }
       );
     }
-
+    declare var SqlServer: any;    
     $scope.playMusic = function () {
       var audio = document.getElementById("audio");
       audio.play();
-      cordova.plugins.sqlserver.init("40cff8ce-969f-4be2-a5ef-a8a101110ab5.sqlserver.sequelizer.com",
-        "tlwqydbgnsopmiti", "Bvv3iDnYnqq7HSQ8Wj4KhrHtmpZtLQth2QjuYWmqobzQ2gMVcHXtxinjVcQ3M2nE", "db40cff8ce969f4be2a5efa8a101110ab5", function (event) {
-          alert(JSON.stringify(event));
-        }, function (error) {
-          alert(JSON.stringify(error));
-        });
+      SqlServer.init("192.168.2.167", "SQLEXPRESS", "", "", "Capstone", function(event) {
+        alert(JSON.stringify(event));
+      }, function(error) {
+        alert(JSON.stringify(error));
+      });
     }
 
     $scope.notify = function () {
