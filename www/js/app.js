@@ -119,11 +119,11 @@ angular.module('myapp', ['ionic', 'firebase'])
     $scope.gotoLoginPage = function () {
       window.location = "login.html";
     }
-    
-    setInterval(function(){
+
+    setInterval(function () {
       $scope.checkConnection();
     }, 1000)
-    
+
     $scope.checkConnection = function () {
       network = navigator.network.connection.type;
       var states = {};
@@ -135,7 +135,11 @@ angular.module('myapp', ['ionic', 'firebase'])
       states[Connection.CELL_4G] = 'Cell 4G connection';
       states[Connection.NONE] = 'No network connection';
       if (states[network] == states[Connection.NONE]) {
-        document.getElementById("diwaliyoutube").innerHTML = "To view this video, you need to have active Internet";
+        document.getElementById("diwaliyoutubepara").innerHTML = "To view youtube video, you need to have an active Internet";
+      }
+      else {
+        document.getElementById("diwaliyoutubeframe").src = "https://www.youtube.com/embed/mPwmXRws7FA";
+
       }
       //alert(states[network]);
     }
