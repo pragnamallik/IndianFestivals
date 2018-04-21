@@ -135,11 +135,9 @@ angular.module('myapp', ['ionic', 'firebase'])
       states[Connection.CELL_4G] = 'Cell 4G connection';
       states[Connection.NONE] = 'No network connection';
       if (states[network] == states[Connection.NONE]) {
-        document.getElementById("diwaliyoutubepara").innerHTML = "To view youtube video, you need to have an active Internet";
-      }
-      else {
-        document.getElementById("diwaliyoutubeframe").src = "https://www.youtube.com/embed/mPwmXRws7FA";
-
+        document.getElementById("youtube").innerHTML = "To view youtube video, you need to have an active Internet";
+        document.getElementById("maps").innerHTML = "To view the map, you need to have an active Internet";
+        document.getElementById("comments").innerHTML = "To Post and read comments, you need to have an active Internet";        
       }
       //alert(states[network]);
     }
