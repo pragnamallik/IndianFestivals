@@ -44,19 +44,19 @@
       <h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Indian Festivals</h1>
     </ion-header-bar>
     <ion-content>
-      <p id="capstone">
+      <div id="capstone">
         <p>
           <h1 class="aligncenter">Our Books</h1>
         </p>
         <p ng-repeat="book in data.books" id="books">{{book.name}}</p>
-      </p>
+      </div>
+      <hr>
       <p style="text-align:center;">
         <button type="button" id="loginwelcomebutton" ng-click="gotoHomePage()">Back</button>
       </p>
       <p style="text-align:center;">
         <button id="logoutbutton" ng-click="gotoIndexPage()">Sign Out</button>
       </p>
-      <hr>
 
     </ion-content>
   </ion-pane>
