@@ -45,7 +45,7 @@ angular.module('myapp', ['ionic', 'firebase'])
     }
     $scope.playMusic = function () {
       var audio = document.getElementById("audio");
-      audio.play();    
+      audio.play();
     }
 
     $scope.notify = function () {
@@ -119,7 +119,11 @@ angular.module('myapp', ['ionic', 'firebase'])
     $scope.gotoLoginPage = function () {
       window.location = "login.html";
     }
-
+    
+    setInterval(function(){
+      $scope.checkConnection();
+    }, 100)
+    
     $scope.checkConnection = function () {
       network = navigator.network.connection.type;
       var states = {};
