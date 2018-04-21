@@ -43,15 +43,9 @@ angular.module('myapp', ['ionic', 'firebase'])
       }
       );
     }
-    declare var SqlServer: any;    
     $scope.playMusic = function () {
       var audio = document.getElementById("audio");
-      audio.play();
-      SqlServer.init("192.168.2.167", "SQLEXPRESS", "", "", "Capstone", function(event) {
-        alert(JSON.stringify(event));
-      }, function(error) {
-        alert(JSON.stringify(error));
-      });
+      audio.play();    
     }
 
     $scope.notify = function () {
