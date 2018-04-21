@@ -44,6 +44,7 @@ angular.module('myapp', ['ionic', 'firebase'])
       );
     }
     $scope.playMusic = function () {
+      $scope.checkConnection();
       var audio = document.getElementById("audio");
       audio.play();    
     }
@@ -133,7 +134,7 @@ angular.module('myapp', ['ionic', 'firebase'])
       if (states[network] == states[Connection.NONE]) {
         document.getElementById("diwaliyoutube").innerHTML = "To view this video, you need to have active Internet";
       }
-      alert(states[network]);
+      //alert(states[network]);
     }
 
     $scope.gotoHomePage = function () {
