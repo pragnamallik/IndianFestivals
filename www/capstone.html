@@ -50,6 +50,14 @@
         </p>
         <p ng-repeat="book in data.books" id="books">{{book.name}}</p>
       </p>
+      <p style="text-align:center;">
+        <button type="button" id="loginwelcomebutton" ng-click="gotoHomePage()">Back</button>
+      </p>
+      <p style="text-align:center;">
+        <button id="logoutbutton" ng-click="gotoIndexPage()">Sign Out</button>
+      </p>
+      <hr>
+
     </ion-content>
   </ion-pane>
 </body>
