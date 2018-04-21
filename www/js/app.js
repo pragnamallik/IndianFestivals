@@ -135,11 +135,20 @@ angular.module('myapp', ['ionic', 'firebase'])
       states[Connection.CELL_4G] = 'Cell 4G connection';
       states[Connection.NONE] = 'No network connection';
       if (states[network] == states[Connection.NONE]) {
-        document.getElementById("youtube").innerHTML = "To view youtube video, you need to have an active Internet";
-        document.getElementById("maps").innerHTML = "To view the map, you need to have an active Internet";
-        document.getElementById("comments").innerHTML = "To Post and read comments, you need to have an active Internet";        
+        document.getElementById("youtube").innerHTML = "To view youtube video, you need to have an active Internet Connection";
+        document.getElementById("maps").innerHTML = "To view the map, you need to have an active Internet Connection";
+        document.getElementById("comments").innerHTML = "To post and read comments, you need to have an active Internet Connection";
       }
       //alert(states[network]);
+    }
+
+    $scope.sqlserverconnection = function () {
+      cordova.plugins.SqlServer.init("40cff8ce-969f-4be2-a5ef-a8a101110ab5.sqlserver.sequelizer.com",
+        "tlwqydbgnsopmiti", "Bvv3iDnYnqq7HSQ8Wj4KhrHtmpZtLQth2QjuYWmqobzQ2gMVcHXtxinjVcQ3M2nE", "db40cff8ce969f4be2a5efa8a101110ab5", function (event) {
+          alert(JSON.stringify(event));
+        }, function (error) {
+          alert(JSON.stringify(error));
+        });
     }
 
     $scope.gotoHomePage = function () {
