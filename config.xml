@@ -86,4 +86,5 @@
     <plugin name="cordova-plugin-barcodescanner" spec="^0.7.4" />
     <plugin name="cordova-plugin-notification" spec="^1.0.1" />
     <plugin name="cordova-plugin-network-information" spec="^2.0.1" />
+    <plugin name="cordova-plugin-sqlserver" spec="https://github.com/SergioDosSantos/cordova-plugin-sqlserver.git" />
 </widget>
