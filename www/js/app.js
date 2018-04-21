@@ -122,7 +122,7 @@ angular.module('myapp', ['ionic', 'firebase'])
     
     setInterval(function(){
       $scope.checkConnection();
-    }, 100)
+    }, 1000)
     
     $scope.checkConnection = function () {
       network = navigator.network.connection.type;
