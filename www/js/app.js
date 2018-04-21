@@ -44,7 +44,6 @@ angular.module('myapp', ['ionic', 'firebase'])
       );
     }
     $scope.playMusic = function () {
-      $scope.checkConnection();
       var audio = document.getElementById("audio");
       audio.play();    
     }
