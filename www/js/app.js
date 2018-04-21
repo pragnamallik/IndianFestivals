@@ -144,7 +144,6 @@ angular.module('myapp', ['ionic', 'firebase'])
         document.getElementById("youtube").innerHTML = "To view youtube video, you need to have an active Internet Connection";
         document.getElementById("maps").innerHTML = "To view the map, you need to have an active Internet Connection";
         document.getElementById("comments").innerHTML = "To post and read comments, you need to have an active Internet Connection";
-        document.getElementById("reviews").innerHTML = "To post and read comments, you need to have an active Internet Connection";
         document.getElementById("capstones").innerHTML = "To see our capstone books, you need to have an active Internet Connection";
       }
       //alert(states[network]);
