@@ -186,3 +186,16 @@ background-color: lightgreen;
     font-style: italic;
 }
 
+#reviewpara{
+    color:crimson;
+    font-weight: bold;
+    font-size: 150%;
+    text-align: center;
+
+}
+
+.reviewpara1{
+    text-align: left;
+    font-weight: bold;
+    font-size: 130%;
+}
