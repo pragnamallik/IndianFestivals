@@ -45,10 +45,8 @@
     </ion-header-bar>
     <ion-content>
       <p id="capstones">
-        <p>
-          <h1 class="aligncenter">Our Books</h1>
-        </p>
-        <p ng-repeat="book in data.books" id="books">{{book.name}}</p>
+        <h1 class="aligncenter">Our Books</h1>
+        <label ng-repeat="book in data.books" id="books">{{book.name}}<br><br></label>
       </p>
       <hr>
       <p style="text-align:center;">
